@@ -20,18 +20,19 @@ export class OrderService {
     const order = {
       buyerEmail: 'user@example.com',
       basketId: basketId,
-      deliveryMethodId: 0,
+      deliveryMethodId: 1,
       shippingAddress: {
         id: 0,
         firstName: orderData.firstName,
         lastName: orderData.lastName,
         street: orderData.address,
         city: orderData.city,
-        country: orderData.country,
+        country: "Egypt",
       },
     };
 
     console.log('Sending order with basketId:', basketId);
+    console.log('Sending order with basketId:', order);
     return this.http.post<Order>(this.baseUrl, order, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

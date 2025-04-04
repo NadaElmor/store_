@@ -6,7 +6,7 @@
   <ul class="nav-links">
     <li><a routerLink="/">Home</a></li>
    
-    <li><a routerLink="/cart">Cart <span class="cart-badge">{{ cartCount }}</span></a></li>
+    <li><a routerLink="/cart">Cart </a></li>
     <li *ngIf="!isLoggedIn"><a routerLink="/login" >Login</a></li>
     <li *ngIf="!isLoggedIn"><a routerLink="/register" >Register</a></li>
     <li class="nav-item" *ngIf="isLoggedIn">
