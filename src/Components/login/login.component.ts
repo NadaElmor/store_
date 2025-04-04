@@ -40,7 +40,7 @@ export class LoginComponent {
     this.authService.login({ email, password }).subscribe({
       next: () =>{
         this.cdr.detectChanges();
-         this.router.navigate(['/home'])
+        this.router.navigate(['/home'])
       },
       error: err => {
        this.errorMessage="Invalid email or password .. please try again"
