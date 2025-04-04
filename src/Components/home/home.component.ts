@@ -5,13 +5,17 @@ import { CartService } from '../../Services/cart.service';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
-import { IProduct } from './../../Models/iproduct';
+
+
+
 
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule, NgxPaginationModule, FormsModule],
- templateUrl: './home.component.html',
+
+  templateUrl: './home.component.html',
+
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
@@ -21,8 +25,6 @@ export class HomeComponent implements OnInit {
   pageSize: number = 5;
   totalProduct: number = 0;
   searchTerm: string = '';
-
-
 
   isLoading = true;
 
@@ -71,7 +73,25 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+
+  loadPaginatedProducts() {
+    this.productService.getAllProductsPaginated(this.currentPage, this.pageSize, this.searchTerm).subscribe(response => {
+      this.products = response.data;
+      this.totalProduct = response.count;
+      console.log(this.totalProduct);
+    });
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.loadPaginatedProducts();
+  }
+
+  onSearch() {
+    this.currentPage = 1;
+    this.loadPaginatedProducts();
+  }
+
 }
-
-
 
