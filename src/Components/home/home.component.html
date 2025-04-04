@@ -1,4 +1,6 @@
-<div *ngFor="let p of products" class="row">
+
+<div class="row">
+    <div *ngFor="let p of products" class="col-lg-4">
     <div id="container" class="col-lg-4">	
 	
         <!-- Start	Product details -->
@@ -29,7 +31,7 @@
         <div class="control">
             
         <!-- Start Button buying -->
-            <button class="btn">
+            <button class="btn" (click)="addToCart(p)">
         <!-- 		the Price -->
              <span class="price">{{p.price}} $</span>
         <!-- 		shopping cart icon-->
