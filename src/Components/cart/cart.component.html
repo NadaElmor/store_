@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2>Cart Shoping/h2>
+  
+    <div *ngIf="(cartItems$ | async)?.length === 0" class="alert alert-info">
+      Cart Empty
+    </div>
+  
+    <div *ngFor="let item of cartItems$ | async" class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-3">
+          <img [src]="item.pictureUrl" class="img-fluid" [alt]="item.productName">
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.productName }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+            <p class="card-text">Quantity: {{ item.quantity }}</p>
+            <button 
+              class="btn btn-danger"
+              (click)="removeItem(item.productId)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+

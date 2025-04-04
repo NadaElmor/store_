@@ -5,6 +5,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HomeComponent,NgxPaginationModule],
