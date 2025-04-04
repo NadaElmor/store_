@@ -27,7 +27,7 @@ body {
   padding: 30px;
   height: 100%;
   float: left;
-  width: 40%;
+  width: 48%;
 }
 
 /* 	Product Name */
@@ -86,7 +86,7 @@ body {
 
 .control {
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 22.8%;
 }
 /* the Button */
