@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
     
     localStorage.removeItem('token');
     this.isLoggedIn = false;
-    this.authService.logout(); // Call the logout method from AuthService
+    this.authService.logout(); 
     this.router.navigate(['/home']); 
   }
   toggleMenu() {

@@ -1,8 +1,26 @@
-<div class="" style="padding-top: 100px">
-  <input [(ngModel)]="searchTerm" (input)="onSearch()" type="search" />
-  <button type="submit">Search</button>
+<!-- <div class="" style="padding-top: 100px">
+  <input [(ngModel)]="searchTerm" (input)="onSearch()" type="search"  class="form-control form-control-lg" 
+  placeholder="Search products..."/>
+  <button type="submit" class="btn btn-primary btn-lg p-2">Search</button>
+</div> -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+      <div class="input-group mt-5 shadow-sm">
+          <input 
+          [(ngModel)]="searchTerm" 
+          (input)="onSearch()" 
+          type="search" 
+          class="form-control form-control-lg" 
+          placeholder="Search products..."
+          >
+          <button class="btn btn-primary btn-lg p-2" type="submit">
+          <i class="fa fa-search me-1"></i> Search
+          </button>
+      </div>
+      </div>
+  </div>
 </div>
-
 <!-- Start the product list -->
 
 <div
@@ -22,7 +40,7 @@
     <!-- Start	Product details -->
     <div class="product-details">
       <!-- 	Product Name -->
-      <h1>{{ p.name }}</h1>
+      <h1 class="w-100">{{ p.name }}</h1>
       <!-- 		<span class="hint new">New</span> -->
       <!-- 		<span class="hint free-shipping">Free Shipping</span> -->
       <!-- 		the Product rating -->
@@ -103,7 +121,7 @@
 
 <!-- Pagination -->
 
-<div class="pagination-container">
+<div class="pagination-container mt-4">
   <pagination-controls
     (pageChange)="onPageChange($event)"
     id="products"
