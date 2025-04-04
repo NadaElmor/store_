@@ -74,7 +74,7 @@ export class CartService {
   
 
   removeItem(productId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${productId}`).pipe(
+    return this.http.delete(`${this.apiUrl}?Id=${productId}`).pipe(
       tap(() => {
         const updatedItems = this.cartItems.value.filter(item => item.productId !== productId);
         this.cartItems.next(updatedItems);
