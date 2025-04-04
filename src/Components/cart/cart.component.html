@@ -1,14 +1,21 @@
 <div class="container mt-5">
   <h2 class="text-center">Shopping Cart</h2>
-  
-  <div *ngIf="(cartItems$ | async)?.length === 0" class="alert alert-info text-center">
+
+  <div
+    *ngIf="(cartItems$ | async)?.length === 0"
+    class="alert alert-info text-center"
+  >
     Cart is Empty
   </div>
 
   <div *ngFor="let item of cartItems$ | async" class="card mb-3 cart-item">
     <div class="row g-0">
       <div class="col-md-3">
-        <img [src]="item.pictureUrl" class="img-fluid cart-item-img" [alt]="item.productName">
+        <img
+          [src]="item.pictureUrl"
+          class="img-fluid cart-item-img"
+          [alt]="item.productName"
+        />
       </div>
       <div class="col-md-9">
         <div class="card-body">
@@ -21,5 +28,11 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="text-center mt-4" *ngIf="(cartItems$ | async)?.length ?? 0 > 0">
+    <button class="btn create-order-button btn-lg" routerLink="/create-order">
+      Proceed to Checkout
+    </button>
   </div>
 </div>

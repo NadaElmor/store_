@@ -1,0 +1,102 @@
+/* أضف هذه الأنماط إلى ملف CSS الخاص بك */
+
+.container.mt-5 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.row {
+  justify-content: center;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+}
+
+.card-header h3,
+.card-header h4 {
+  margin: 0;
+  color: #0c6b2e;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.shipping-info h4,
+.payment-method h4 {
+  color: #6c757d;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: #0c6b2e;
+  box-shadow: 0 0 0 3px #0C6B2E(115, 103, 240, 0.2);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #0c6b2e 0%, #3b8c2d 100%);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px #0C6B2E(115, 103, 240, 0.4);
+}
+
+.btn-success:disabled {
+  background: #cccccc;
+  transform: none;
+  box-shadow: none;
+}
+
+.alert-success {
+  border-radius: 10px;
+  background: rgba(40, 167, 69, 0.2);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .container.mt-5 {
+    padding: 20px 15px;
+  }
+
+  .card-body {
+    padding: 20px 15px;
+  }
+
+  .btn-success {
+    padding: 10px 20px;
+  }
+}
