@@ -1,6 +1,25 @@
-<div class="" style="padding-top: 100px;">
+<!-- <div class="" style="padding-top: 100px;">
     <input [(ngModel)]="searchTerm" (input)="onSearch()" type="search">
 <button type="submit">Search</button>
+</div> -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+        <div class="input-group mt-5 shadow-sm">
+            <input 
+            [(ngModel)]="searchTerm" 
+            (input)="onSearch()" 
+            type="search" 
+            class="form-control form-control-lg" 
+            placeholder="Search products..."
+            >
+            <button class="btn btn-primary btn-lg p-2" type="submit">
+            <i class="fa fa-search me-1"></i> Search
+            </button>
+        </div>
+        </div>
+    </div>
 </div>
 
 
@@ -17,7 +36,7 @@
         <div class="product-details">
 
             <!-- 	Product Name -->
-            <h1>{{p.name}}</h1>
+            <h1 class="w-100">{{p.name}}</h1>
             <!-- 		<span class="hint new">New</span> -->
             <!-- 		<span class="hint free-shipping">Free Shipping</span> -->
             <!-- 		the Product rating -->
@@ -55,27 +74,19 @@
 
 
             <!-- The information about the product -->
-            <p class="information">
+            <!-- <p class="information">
                 {{p.description}}
-            </p>
+            </p> -->
 
 
 
-            <!-- 		Control -->
-            <div class="control">
-
-                <!-- Start Button buying -->
+            <!-- <div class="control">
                 <button class="btn" (click)="addToCart(p)">
-                    <!-- 		the Price -->
                     <span class="price">{{p.price}} $</span>
-                    <!-- 		shopping cart icon-->
                     <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                    <!-- 		Buy Now / ADD to Cart-->
                     <span class="buy">Buy Now</span>
                 </button>
-                <!-- End Button buying -->
-
-            </div>
+            </div> -->
 
 
         </div>
@@ -116,7 +127,7 @@
 
 <!-- Pagination -->
 
-<div class="pagination-container">
+<div class="pagination-container mt-5">
     <pagination-controls (pageChange)="onPageChange($event)" id="products" class="custom-pagination">
     </pagination-controls>
 
