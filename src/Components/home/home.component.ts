@@ -5,6 +5,7 @@ import { CartService } from '../../Services/cart.service';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { IProduct } from '../../Models/iproduct';
 
 
 
@@ -56,15 +57,15 @@ export class HomeComponent implements OnInit {
     });
   }
   
-  onPageChange(page: number) {
-    this.currentPage = page;
-    this.loadProducts();
-  }
+  // onPageChange(page: number) {
+  //   this.currentPage = page;
+  //   this.loadProducts();
+  // }
 
-  onSearch() {
-    this.currentPage = 1;
-    this.loadProducts();
-  }
+  // onSearch() {
+  //   this.currentPage = 1;
+  //   this.loadProducts();
+  // }
   addToCart(product: IProduct) {
     this.cartService.addToCart(product).subscribe({
       next: () => alert("Add to Cart"),
