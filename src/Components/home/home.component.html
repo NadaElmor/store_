@@ -1,4 +1,4 @@
-<input [(ngModel)]="searchTerm" (input)="onSearch()"   type="search">
+<input [(ngModel)]="searchTerm" (input)="onSearch()" type="search">
 <button type="submit">Search</button>
 
 
@@ -50,31 +50,31 @@
 
             </div>
 
-                
-            
-        <!-- The information about the product -->
-                <p class="information">
-                {{p.description}} 
-                </p>
-        
-                
-                
-        <!-- 		Control -->
-        <div class="control">
-            
-        <!-- Start Button buying -->
-            <button class="btn" (click)="addToCart(p)">
-        <!-- 		the Price -->
-             <span class="price">{{p.price}} $</span>
-        <!-- 		shopping cart icon-->
-           <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-        <!-- 		Buy Now / ADD to Cart-->
-           <span class="buy">Buy Now</span>
-         </button>
-            <!-- End Button buying -->
-            
-        </div>
-                    
+
+
+            <!-- The information about the product -->
+            <p class="information">
+                {{p.description}}
+            </p>
+
+
+
+            <!-- 		Control -->
+            <div class="control">
+
+                <!-- Start Button buying -->
+                <button class="btn" (click)="addToCart(p)">
+                    <!-- 		the Price -->
+                    <span class="price">{{p.price}} $</span>
+                    <!-- 		shopping cart icon-->
+                    <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                    <!-- 		Buy Now / ADD to Cart-->
+                    <span class="buy">Buy Now</span>
+                </button>
+                <!-- End Button buying -->
+
+            </div>
+
         </div>
 
         <!-- 	End	Product details   -->
@@ -117,5 +117,3 @@
     <pagination-controls (pageChange)="onPageChange($event)" id="products" class="custom-pagination">
     </pagination-controls>
 </div>
-
-
