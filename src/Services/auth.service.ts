@@ -18,6 +18,8 @@ export class AuthService {
   login(credentials: { email: string; password: string }) {
     return this.http.post<{ token: string }>(`${this.apiUrl}/login`, credentials).pipe(
       tap(response => {
+        console.log(response.token);
+        
         localStorage.setItem('token', response.token);
         this.authStatus.next(true);
       })

@@ -1,0 +1,102 @@
+/* General Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #0c6b2e;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Desktop Navigation Links */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links a:hover {
+    color: #f4a261;
+  }
+  
+  /* Cart Badge */
+  .cart-badge {
+    background-color: red;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  /* Mobile Menu */
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px 0;
+    list-style: none;
+  }
+  
+  .mobile-menu li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .mobile-menu.open {
+    display: flex;
+  }
+  
+ 
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  .nav-links:hover{
+cursor: pointer;
+  }

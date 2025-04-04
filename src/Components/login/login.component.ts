@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,7 +15,12 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
+  successMessage: string = '';
+  errorMessage: string = '';
 
+  constructor(private cdr: ChangeDetectorRef){
+
+  }
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
@@ -33,8 +38,13 @@ export class LoginComponent {
     }
   
     this.authService.login({ email, password }).subscribe({
-      next: () => this.router.navigate(['/home']),
-      error: err => alert('Login failed: ' + err.error.message)
+      next: () =>{
+        this.cdr.detectChanges();
+         this.router.navigate(['/home'])
+      },
+      error: err => {
+       this.errorMessage="Invalid email or password .. please try again"
+      }
     });
   }
   

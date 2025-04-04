@@ -1,25 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">MyStore</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+   
+    <li><a routerLink="/cart">Cart <span class="cart-badge">{{ cartCount }}</span></a></li>
+    <li *ngIf="!isLoggedIn"><a routerLink="/login" >Login</a></li>
+    <li *ngIf="!isLoggedIn"><a routerLink="/register" >Register</a></li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <button class="btn btn-outline-danger" (click)="logout()"><img src="logout.png" style="width: 35px; " alt=""></button>
+    </li>
+  </ul>
+
+  <div class="hamburger" (click)="toggleMenu()">
+    ☰
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<ul class="mobile-menu" [class.open]="menuOpen">
+  <li><a routerLink="/" (click)="toggleMenu()">Home</a></li>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-       
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+  <li><a routerLink="/cart" (click)="toggleMenu()">Cart <span class="cart-badge">{{ cartCount }}</span></a></li>
+  <li><a routerLink="/login" (click)="toggleMenu()">Login</a></li>
+</ul>
